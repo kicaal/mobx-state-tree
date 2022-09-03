@@ -1,0 +1,30 @@
+[
+  {
+      "id": "978-0641723445",
+      "model": "ENTRADA HOODY - Jersey con capucha",
+      "size": "XL",
+      "isAvailable": true,
+      "price": 12.5
+  },
+  {
+      "id": "978-1423103349",
+      "model": "FIT SHORT - Pantalón corto de deporte",
+      "size": "XL",
+      "isAvailable": true,
+      "price": 6.49
+  },
+  {
+      "id": "978-1857995879",
+      "model": "ACADEMY 21 SHORT - Pantalón corto de deporte",
+      "size": "XL",
+      "isAvailable": true,
+      "price": 3.07
+  },
+  {
+      "id": "978-1933988177",
+      "model": "TIRO - Pantalón corto de deporte",
+      "size": "XL",
+      "isAvailable": false,
+      "price": 30.5
+  }
+]

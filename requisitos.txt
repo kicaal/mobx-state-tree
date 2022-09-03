@@ -1,0 +1,22 @@
+PARTE 1.
+
+Enunciado:
+
+Crea una tienda, que como pantalla principal tenga todos los productos y puedas añadir o quitar de la cesta.
+La cesta será un slide que aparecerá al clicar. lo harás así para no usar el router.
+
+
+1.1 la store debe ser en mobx-state-tree, usando los conceptos básicos y la api (intenta provocar todo para aprenderlo)
+
+1.2 el formulario usado con react hook form
+
+1.3 para style. tailwind con styled components
+
+1.4 hacer test con jest/testing library. el testing hacerlo de los modelos de mobx y de los componentes en si.
+
+
+PARTE 2
+
+2.1 crear otro proyecto con alguna tontería y juntalos o mira como se gestiona con el NX
+
+2.2 Subelo a un repo de github y si te da tiempo o puedes deploya
