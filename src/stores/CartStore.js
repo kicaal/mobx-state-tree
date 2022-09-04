@@ -4,7 +4,7 @@ import { TShirt } from "./TShirtStore";
 export const CartEntry = types
   .model("CartEntry", {
     tShirt: types.reference(TShirt),
-    quantity: 0,
+    //quantity: 0,
   })
   .views((self) => ({
     get price() {
@@ -32,11 +32,11 @@ export const CartStore = types
   })
   .actions((self) => ({
     addTShirt(tShirt, quantity = 1) {
-      //let entry = self.entries.find((entry) => entry.tShirt.id === tShirt.id);
-      //if (!entry) {
-      self.entries.push({ tShirt: tShirt });
-      //entry = self.entries[self.entries.length - 1];
-      //}
-      //entry.increaseQuantity(quantity);
+      let entry = self.entries.find((entry) => entry.tShirt.id === tShirt.id);
+      if (!entry) {
+        self.entries.push({ tShirt: tShirt });
+        entry = self.entries[self.entries.length - 1];
+      }
+      entry.increaseQuantity(quantity);
     },
   }));

@@ -1,9 +1,9 @@
 import React from "react";
 import "./index.css";
 import TShirts from "./components/TShirts";
-import { ShopStore } from "./stores/ShopStore";
+import { Provider, ShopStore } from "./stores/ShopStore";
 import { Cart } from "./components/Cart";
-import { Provider } from "mobx-react";
+
 const fetcher = (url) =>
   window
     .fetch(url, {
@@ -12,13 +12,13 @@ const fetcher = (url) =>
     .then((response) => response.json());
 
 const shop = ShopStore.create(
-  { tShirtStore: {}, cart: {} },
+  { tShirtStore: {}, cartStore: {} },
   {
     fetch: fetcher,
   }
 );
 const App = () => (
-  <Provider store={shop}>
+  <Provider value={shop}>
     <TShirts />
     <Cart />
   </Provider>

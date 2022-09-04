@@ -1,13 +1,13 @@
 import { types, getEnv } from "mobx-state-tree";
 import { TShirtStore } from "./TShirtStore";
 import { CartStore } from "./CartStore";
-import React from "react";
+import React, { useContext } from "react";
 import { MobXProviderContext } from "mobx-react";
 
 export const ShopStore = types
   .model("ShopStore", {
     tShirtStore: TShirtStore,
-    cart: CartStore,
+    cartStore: CartStore,
   })
   .views((self) => ({
     get fetch() {
@@ -22,9 +22,6 @@ export const ShopStore = types
     get tShirts() {
       return self.tShirtStore.tShirts;
     },
-    get allEntries() {
-      return self.cart.entries;
-    },
     get sortedAvailabletShirts() {
       return self.tShirtStore.sortedAvailableTShirts;
     },
@@ -35,6 +32,17 @@ export const ShopStore = types
     },
   }));
 
-export function useStore() {
-  return React.useContext(MobXProviderContext).store;
-}
+const MSTContext = React.createContext(null);
+
+// eslint-disable-next-line prefer-destructuring
+export const Provider = MSTContext.Provider;
+
+export const useStore = (mapStateToProps) => {
+  const store = useContext(MSTContext);
+
+  if (typeof mapStateToProps !== "undefined") {
+    return mapStateToProps(store);
+  }
+
+  return store;
+};

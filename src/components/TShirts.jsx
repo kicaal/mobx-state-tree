@@ -1,5 +1,4 @@
 import { observer } from "mobx-react"
-import { useEffect } from "react"
 import { useStore } from "../stores/ShopStore"
 import TShirtsStyles from "./TShirts.styles.tw"
 
@@ -9,7 +8,6 @@ const TShirts = () => {
 
   const shop = useStore()
 
-  console.log(shop.cart)
 
   return (
    <TShirtsStyles>
@@ -29,7 +27,7 @@ const TShirts = () => {
         </div>
         <div className="add-cart-button">
             <span >{tShirt.price} €</span>
-            <button onClick={() => shop.cart.addTShirt(tShirt)}>Add to cart</button>
+            <button onClick={() => shop.cartStore.addTShirt(tShirt)}>Add to cart</button>
         </div>
       </div>
     </div>)
