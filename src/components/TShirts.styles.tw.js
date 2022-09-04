@@ -2,7 +2,7 @@ import styled from "styled-components";
 import tw from "twin.macro";
 
 const TShirtsStyles = styled.div`
-  ${tw`w-full flex gap-5 p-4`}
+  ${tw`w-full flex gap-5 p-4 col-start-1 col-end-3`}
   & {
     .wrapper {
       ${tw`w-full max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700`}

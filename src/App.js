@@ -3,6 +3,7 @@ import "./index.css";
 import TShirts from "./components/TShirts";
 import { Provider, ShopStore } from "./stores/ShopStore";
 import { Cart } from "./components/Cart";
+import AppStyles from "./AppStyles.styles.tw";
 
 const fetcher = (url) =>
   window
@@ -19,8 +20,10 @@ const shop = ShopStore.create(
 );
 const App = () => (
   <Provider value={shop}>
-    <TShirts />
-    <Cart />
+    <AppStyles>
+      <TShirts />
+      <Cart />
+    </AppStyles>
   </Provider>
 );
 
